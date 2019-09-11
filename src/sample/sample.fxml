@@ -42,42 +42,42 @@
             <TextField fx:id="txtAgentBusinessPhone" prefHeight="25.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="txtAgentEmail" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextField fx:id="txtAgentPosition" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label text="Agent ID">
+            <Label fx:id="lblAgentId" text="Agent ID">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="First Name" GridPane.rowIndex="1">
+            <Label fx:id="lblFirstName" text="First Name" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Middle Initial" GridPane.rowIndex="2">
+            <Label fx:id="lblMiddleInitial" text="Middle Initial" GridPane.rowIndex="2">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Last Name" GridPane.rowIndex="3">
+            <Label fx:id="lblLastName" text="Last Name" GridPane.rowIndex="3">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Business Phone" GridPane.rowIndex="4">
+            <Label fx:id="lblBusPhone" text="Business Phone" GridPane.rowIndex="4">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Email" GridPane.rowIndex="5">
+            <Label fx:id="lblEmail" text="Email" GridPane.rowIndex="5">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Position" GridPane.rowIndex="6">
+            <Label fx:id="lblPosition" text="Position" GridPane.rowIndex="6">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label text="Agency ID" GridPane.rowIndex="7">
+            <Label fx:id="lblAgencyId" text="Agency ID" GridPane.rowIndex="7">
                <font>
                   <Font size="14.0" />
                </font>
