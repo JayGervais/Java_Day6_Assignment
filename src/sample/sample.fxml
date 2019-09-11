@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ToolBar layoutY="-1.0" prefHeight="47.0" prefWidth="422.0">
+        <items>
+            <ComboBox fx:id="comboBoxAgents" prefWidth="150.0" promptText="Choose Agent" />
+        </items>
+      </ToolBar>
+      <GridPane alignment="CENTER" hgap="5.0" layoutX="7.0" layoutY="46.0" prefHeight="269.0" prefWidth="389.0" vgap="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="60.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="110.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="279.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="txtAgentId" GridPane.columnIndex="1" />
+            <TextField fx:id="txtAgentFirstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAgentLastName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtAgentMiddleInitial" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtAgentBusinessPhone" prefHeight="25.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtAgentEmail" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtAgentPosition" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Agent ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="First Name" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Middle Initial" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Last Name" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Business Phone" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Email" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Position" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Agency ID" GridPane.rowIndex="7">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtAgentAgencyId" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </GridPane>
+      <Button fx:id="btnEdit" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="66.0" layoutY="344.0" mnemonicParsing="false" onAction="#editButtonAction" prefHeight="30.0" prefWidth="140.0" style="-fx-min-width: 100%;" text="Edit">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSave" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" layoutX="216.0" layoutY="344.0" mnemonicParsing="false" onAction="#saveButtonAction" prefHeight="30.0" prefWidth="140.0" style="-fx-min-width: 100%;" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
