@@ -11,10 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class Controller {
 
@@ -52,6 +49,30 @@ public class Controller {
     private TextField txtAgentAgencyId;
 
     @FXML
+    private Label lblAgentId;
+
+    @FXML
+    private Label lblFirstName;
+
+    @FXML
+    private Label lblMiddleInitial;
+
+    @FXML
+    private Label lblLastName;
+
+    @FXML
+    private Label lblBusPhone;
+
+    @FXML
+    private Label lblEmail;
+
+    @FXML
+    private Label lblPosition;
+
+    @FXML
+    private Label lblAgencyId;
+
+    @FXML
     private Button btnEdit;
 
     @FXML
@@ -70,6 +91,14 @@ public class Controller {
         assert txtAgentAgencyId != null : "fx:id=\"txtAgentAgencyId\" was not injected: check your FXML file 'sample.fxml'.";
         assert btnEdit != null : "fx:id=\"btnEdit\" was not injected: check your FXML file 'sample.fxml'.";
         assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'sample.fxml'.";
+        assert lblAgentId != null : "fx:id=\"lblAgentId\" was not injected: check your FXML file 'sample.fxml'.";
+        assert lblFirstName != null : "fx:id=\"lblFirstName\" was not injected: check your FXML file 'sample.fxml'.";
+        assert lblMiddleInitial != null : "fx:id=\"lblMiddleInitial\" was not injected: check your FXML file 'sample.fxml'.";
+        assert lblLastName != null : "fx:id=\"lblLastName\" was not injected: check your FXML file 'sample.fxml'.";
+        assert lblBusPhone != null : "fx:id=\"lblBusPhone\" was not injected: check your FXML file 'sample.fxml'.";
+        assert lblEmail != null : "fx:id=\"lblEmail\" was not injected: check your FXML file 'sample.fxml'.";
+        assert lblPosition != null : "fx:id=\"lblPosition\" was not injected: check your FXML file 'sample.fxml'.";
+        assert lblAgencyId != null : "fx:id=\"lblAgencyId\" was not injected: check your FXML file 'sample.fxml'.";
 
         btnSave.setDisable(true);
         txtAgentId.setDisable(true);
@@ -77,6 +106,7 @@ public class Controller {
 
         agentDropdownData();
 
+        // load agent data
         comboBoxAgents.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Agent>()
         {
             @Override
@@ -95,6 +125,33 @@ public class Controller {
                 }
             }
         });
+
+        // get table columns
+        ObservableList<Object> data = FXCollections.observableArrayList();
+        try
+        {
+            Connection conn = ConnectionManager.getConnection();
+            String query = "SELECT * FROM agents";
+            ResultSet rs = conn.createStatement().executeQuery(query);
+            String[] columns = new String[9];
+            for (int i = 1; i < rs.getMetaData().getColumnCount(); i++)
+            {
+                columns[i] = rs.getMetaData().getColumnName(i);
+            }
+            // set labels with array values
+            lblAgentId.setText(columns[1]);
+            lblFirstName.setText(columns[2]);
+            lblMiddleInitial.setText(columns[3]);
+            lblLastName.setText(columns[4]);
+            lblBusPhone.setText(columns[5]);
+            lblEmail.setText(columns[6]);
+            lblPosition.setText(columns[7]);
+            lblAgencyId.setText(columns[8]);
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /*-------------------------[ action events ]-------------------------*/
